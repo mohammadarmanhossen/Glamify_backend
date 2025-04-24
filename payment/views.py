@@ -94,7 +94,7 @@ class PaymentSuccessAPI(APIView):
         if orderitem_id:
             orderitem_id.is_paid = True
             orderitem_id.save()
-            return redirect("http://127.0.0.1:5500/order_details.html")
+            return redirect("https://glamify-frontend-site.netlify.app/order_details.html")
         
         return Response({"error": "Order not found"}, status=404)
 
@@ -104,13 +104,13 @@ class PaymentFailedAPI(APIView):
     permission_classes = [AllowAny]  
 
     def post(self, request):
-        return redirect("http://127.0.0.1:5500/order_details.html")
+        return redirect("https://glamify-frontend-site.netlify.app/order_details.html")
 
 
 class PaymentCancelAPI(APIView):
     permission_classes = [AllowAny] 
     def post(self, request):
-        return redirect("http://127.0.0.1:5500/order_details.html")
+        return redirect("https://glamify-frontend-site.netlify.app/order_details.html")
 
 
 
