@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'Ecommerce.wsgi.app'
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://glamify-backend-tp2c.onrender.com/",
+    "https://glamify-backend-tp2c.onrender.com",
 ]
 
 # Database
