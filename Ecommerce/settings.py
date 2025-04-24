@@ -53,18 +53,19 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  
     'django.middleware.common.CommonMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 
 
@@ -110,9 +111,11 @@ WSGI_APPLICATION = 'Ecommerce.wsgi.app'
 
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://glamify-backend-tp2c.onrender.com",
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5500",  
+    "http://127.0.0.1:8000",  
 ]
+
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
