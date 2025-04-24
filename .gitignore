@@ -6,5 +6,5 @@ venv/
 
 media/
 
-.env/
+Ecommerce/.env
 
