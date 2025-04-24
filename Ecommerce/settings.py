@@ -28,7 +28,12 @@ SECRET_KEY = 'django-insecure-1l1szpbx70=x_o2i@211=&$jf0&ui3iz%3h2^*8mah6!9dn#-u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['glamify-backend-tp2c.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'glamify-backend-tp2c.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
+
 
 
 # Application definition
