@@ -110,9 +110,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Ecommerce.wsgi.app'
 
 
-
 CORS_ALLOWED_ORIGINS = [
-    "https://glamify-frontend-site.netlify.app",  
+    "https://glamify-frontend-site.netlify.app",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://glamify-frontend-site.netlify.app",
 ]
 
 
