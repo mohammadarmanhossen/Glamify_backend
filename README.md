@@ -1,7 +1,7 @@
 # Ecommerce-website (Glamify)
 
 
-Glamify is a comprehensive ecomomerce-website system developed using Django REST Framework, featuring user authentication, hotel and booking management, payment processing, and review functionalities. This application supports CRUD operations for hotels and bookings, secure payments via SSLCommerz, and integrates.
+Glamify is a feature-rich e-commerce web application built with Django REST Framework, offering a smooth and secure online shopping experience. From user authentication to product management, order tracking, and secure payments — Glamify is designed to handle every aspect of a modern online store.
 
 - **Frontend Live Site:** [Netlify](https://glamify-frontend-site.netlify.app/)
 - **Backend Live Site:** [Render](https://glamify-backend-tp2c.onrender.com/)
