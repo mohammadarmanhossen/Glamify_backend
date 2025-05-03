@@ -3,10 +3,10 @@
 
 Glamify is a comprehensive ecomomerce-website system developed using Django REST Framework, featuring user authentication, hotel and booking management, payment processing, and review functionalities. This application supports CRUD operations for hotels and bookings, secure payments via SSLCommerz, and integrates.
 
-- **Frontend Live Site:** [Netlify](https://skyline-frontend.netlify.app/)
-- **Backend Live Site:** [Render](https://skyline-backend-krnt.onrender.com/)
-- **Frontend GitHub:** [Skyline-Frontend](https://github.com/mohammadarmanhossen/Skyline_frontend)
-- **Backend GitHub:** [Skyline-Backend](https://github.com/mohammadarmanhossen/Skyline_backend)
+- **Frontend Live Site:** [Netlify](https://glamify-frontend-site.netlify.app/)
+- **Backend Live Site:** [Render](https://glamify-backend-tp2c.onrender.com/)
+- **Frontend GitHub:** [Glamify-Frontend](https://github.com/mohammadarmanhossen/Glamify_frontend)
+- **Backend GitHub:** [Glamify-Backend](https://github.com/mohammadarmanhossen/Glamify_backend)
 
 ### User Access Information
 - **Admin Role:**
@@ -17,16 +17,16 @@ Password: admin
 
 - **Normal User:**
 ```
-Username: arman
-Password: arman
+Username:  arman
+Password: Arman404@
 ```
 ---
 
 ## Key Features
 - **User Authentication** via Gmail OAuth
-- **CRUD Operations** for hotel and booking management
+- **CRUD Operations** for add to cart management
 - **SSLCommerz Payment Integration** for secure payments
-- **Hotel Review System** for customer feedback
+- **Porduct Review System** for customer feedback
 - **Scalable PostgreSQL Database** with Django Rest Framework API
 
 ---
@@ -45,8 +45,8 @@ Password: arman
 1. **Clone the repository:**
  ```bash
  
-git clone https://github.com/mohammadarmanhossen/Skyline_backend
-cd Skyline_backend
+git clone https://github.com/mohammadarmanhossen/Glamify_backend
+cd Glamify_backend
 ```
 
 Install dependencies:
