@@ -3,10 +3,10 @@
 
 Glamify is a feature-rich e-commerce web application built with Django REST Framework, offering a smooth and secure online shopping experience. From user authentication to product management, order tracking, and secure payments — Glamify is designed to handle every aspect of a modern online store.
 
-- **Frontend Live Site:** [Netlify](https://glamify-frontend-site.netlify.app/)
-- **Backend Live Site:** [Render](https://glamify-backend-tp2c.onrender.com/)
-- **Frontend GitHub:** [Glamify-Frontend](https://github.com/mohammadarmanhossen/Glamify_frontend)
-- **Backend GitHub:** [Glamify-Backend](https://github.com/mohammadarmanhossen/Glamify_backend)
+- **Glamify Frontend Live Site:** [glamify-frontend-site.netlify.app](https://glamify-frontend-site.netlify.app/)
+- **Glamify Backend Live Site:** [glamify-backend-tp2c.onrender.com](https://glamify-backend-tp2c.onrender.com/)
+- **Glamify Frontend GitHub:** [github.com/mohammadarmanhossen/Glamify_frontend](https://github.com/mohammadarmanhossen/Glamify_frontend)
+- **Glamify Backend GitHub:** [github.com/mohammadarmanhossen/Glamify_backend](https://github.com/mohammadarmanhossen/Glamify_backend)
 
 ### User Access Information
 - **Admin Role:**
@@ -40,13 +40,106 @@ Password: Arman404@
 
 ---
 
+## Api Intigration
+
+---
+Porduct App:
+---
+Distict :
+```
+http://skyline-backend-krnt.onrender.com/district/
+
+```
+Hotels :
+```
+http://skyline-backend-krnt.onrender.com/hotels/
+```
+
+Review:
+```
+http://skyline-backend-krnt.onrender.com/reviews/
+```
+Bookes:
+```
+ttp://skyline-backend-krnt.onrender.com/bookeds/
+```
+
+
+Account App:
+---
+User Login :
+```
+https://skyline-backend-krnt.onrender.com/client/login/
+```
+User Register :
+```
+https://skyline-backend-krnt.onrender.com/client/register/
+```
+
+User Logout:
+```
+https://skyline-backend-krnt.onrender.com/client/logout/
+```
+Admin login:
+```
+https://skyline-backend-krnt.onrender.com/client/admin/login/
+```
+Admin logout :
+```
+https://skyline-backend-krnt.onrender.com/client/admin/logout/
+```
+
+User :
+```
+https://skyline-backend-krnt.onrender.com/client/users/
+```
+Contact:
+```
+https://skyline-backend-krnt.onrender.com/client/contact/
+```
+Change password:
+```
+https://skyline-backend-krnt.onrender.com/client/change_password/${user_id}/
+```
+
+
+Payment App:
+---
+Checkout :
+```
+https://skyline-backend-krnt.onrender.com/checkout/
+
+```
+Order :
+```
+https://skyline-backend-krnt.onrender.com/order/
+```
+
+Created Payment:
+```
+https://skyline-backend-krnt.onrender.com/payment/create_payment/
+```
+Payment Success:
+```
+https://skyline-backend-krnt.onrender.com/payment/success/
+```
+Payment Cencel :
+```
+https://skyline-backend-krnt.onrender.com/payment/cancel /
+```
+Payment Failed :
+```
+https://skyline-backend-krnt.onrender.com/payment/failed /
+```
+
+---
 ## Installation and Setup
 
-1. **Clone the repository:**
+ **Clone the repository:**
  ```bash
  
-git clone https://github.com/mohammadarmanhossen/Glamify_backend
-cd Glamify_backend
+git clone https://github.com/mohammadarmanhossen/Skyline_backend
+cd Skyline_backend
 ```
 
 Install dependencies:
@@ -73,3 +166,5 @@ Run Tests:
 ```
 python manage.py runserver
 ```
+
+
