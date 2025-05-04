@@ -45,23 +45,23 @@ Password: Arman404@
 ---
 Porduct App:
 ---
-Distict :
+Prodcut :
 ```
-http://skyline-backend-krnt.onrender.com/district/
+https://glamify-backend-tp2c.onrender.com/product/
 
 ```
-Hotels :
+Cart :
 ```
-http://skyline-backend-krnt.onrender.com/hotels/
+https://glamify-backend-tp2c.onrender.com/cart/
 ```
 
 Review:
 ```
-http://skyline-backend-krnt.onrender.com/reviews/
+https://glamify-backend-tp2c.onrender.com/review/
 ```
-Bookes:
+Brand:
 ```
-ttp://skyline-backend-krnt.onrender.com/bookeds/
+https://glamify-backend-tp2c.onrender.com/Brand/
 ```
 
 
@@ -69,37 +69,37 @@ Account App:
 ---
 User Login :
 ```
-https://skyline-backend-krnt.onrender.com/client/login/
+https://glamify-backend-tp2c.onrender.com/account/login/
 ```
 User Register :
 ```
-https://skyline-backend-krnt.onrender.com/client/register/
+https://glamify-backend-tp2c.onrender.com/account/register/
 ```
 
 User Logout:
 ```
-https://skyline-backend-krnt.onrender.com/client/logout/
+https://glamify-backend-tp2c.onrender.com/account/logout/
 ```
 Admin login:
 ```
-https://skyline-backend-krnt.onrender.com/client/admin/login/
+https://glamify-backend-tp2c.onrender.com/account/admin/login/
 ```
 Admin logout :
 ```
-https://skyline-backend-krnt.onrender.com/client/admin/logout/
+https://glamify-backend-tp2c.onrender.com/account/admin/logout/
 ```
 
 User :
 ```
-https://skyline-backend-krnt.onrender.com/client/users/
+https://glamify-backend-tp2c.onrender.com/account/user/
 ```
 Contact:
 ```
-https://skyline-backend-krnt.onrender.com/client/contact/
+https://glamify-backend-tp2c.onrender.com/account/contact/
 ```
 Change password:
 ```
-https://skyline-backend-krnt.onrender.com/client/change_password/${user_id}/
+https://glamify-backend-tp2c.onrender.com/account/change_password/${user_id}/
 ```
 
 
@@ -107,29 +107,29 @@ Payment App:
 ---
 Checkout :
 ```
-https://skyline-backend-krnt.onrender.com/checkout/
+https://glamify-backend-tp2c.onrender.com/checkout/
 
 ```
 Order :
 ```
-https://skyline-backend-krnt.onrender.com/order/
+https://glamify-backend-tp2c.onrender.com/orderitem/
 ```
 
 Created Payment:
 ```
-https://skyline-backend-krnt.onrender.com/payment/create_payment/
+https://glamify-backend-tp2c.onrender.com/payment/create_payment/
 ```
 Payment Success:
 ```
-https://skyline-backend-krnt.onrender.com/payment/success/
+https://glamify-backend-tp2c.onrender.com/payment/success/
 ```
 Payment Cencel :
 ```
-https://skyline-backend-krnt.onrender.com/payment/cancel /
+https://glamify-backend-tp2c.onrender.com/payment/cancel /
 ```
 Payment Failed :
 ```
-https://skyline-backend-krnt.onrender.com/payment/failed /
+https://glamify-backend-tp2c.onrender.com/payment/failed /
 ```
 
 ---
