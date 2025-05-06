@@ -18,14 +18,39 @@ class Checkout(models.Model):
         return f"Order for {self.name} (x{self.quantity})"
          
 
+# class Orderitem(models.Model):
+#     user = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True)
+#     # checkout = models.ForeignKey(Checkout, on_delete=models.CASCADE, related_name='items', blank=True, null=True)
+#     checkout = models.ManyToManyField(Checkout, related_name='items', blank=True)
+
+#     # product_name = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)
+#  product_name = models.CharField(max_length=255, null=False, default="BMW")
+
+#     quantity = models.PositiveIntegerField(default=1) 
+#     status = models.CharField(max_length=20, choices=[
+#         ('success', 'Success'), 
+#         ('failed', 'Failed'), 
+#         ('pending', 'Pending')
+#     ])
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     is_paid = models.BooleanField(default=False)
+
+#     def __str__(self):
+#         return f"Payment for Order ({self.product_name})"
+
+
+
 class Orderitem(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True)
-    checkout = models.ForeignKey(Checkout, on_delete=models.CASCADE, related_name='items', blank=True, null=True)
-    product_name = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)
-    quantity = models.PositiveIntegerField(default=1) 
+    checkout = models.ManyToManyField(Checkout, related_name='items', blank=True)
+
+    # product_name field with a default value set
+    product_name = models.CharField(max_length=255, null=False, default="BMW")
+
+    quantity = models.PositiveIntegerField(default=1)
     status = models.CharField(max_length=20, choices=[
-        ('success', 'Success'), 
-        ('failed', 'Failed'), 
+        ('success', 'Success'),
+        ('failed', 'Failed'),
         ('pending', 'Pending')
     ])
     created_at = models.DateTimeField(auto_now_add=True)
