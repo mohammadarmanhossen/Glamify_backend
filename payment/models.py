@@ -24,7 +24,7 @@ class Orderitem(models.Model):
     product_name = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)
     quantity = models.PositiveIntegerField(default=1) 
     status = models.CharField(max_length=20, choices=[
-        ('success', 'Scucess'), 
+        ('success', 'Success'), 
         ('failed', 'Failed'), 
         ('pending', 'Pending')
     ])
