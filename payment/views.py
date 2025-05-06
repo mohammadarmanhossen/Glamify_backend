@@ -12,6 +12,9 @@ from .serializers import CheckoutSerializer, OrderitemSerializer
 from .models import Checkout, Orderitem
 
 
+from product.models import Cart 
+from django.utils import timezone
+
 class CheckoutViewSet(viewsets.ModelViewSet):
     queryset = Checkout.objects.all()
     serializer_class =CheckoutSerializer
@@ -84,20 +87,57 @@ class PaymentViewSet(viewsets.ViewSet):
 
 
     
+# class PaymentSuccessAPI(APIView):
+#     permission_classes = [AllowAny]
+
+#     def post(self, request, orderitem_id):  
+
+#         orderitem_id= Orderitem.objects.filter(id=orderitem_id).first()
+
+#         if orderitem_id:
+#             orderitem_id.is_paid = True
+#             orderitem_id.save()
+#             return redirect("https://glamify-frontend-site.netlify.app/order_details.html")
+        
+#         return Response({"error": "Order not found"}, status=404)
+
+
 class PaymentSuccessAPI(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, orderitem_id):  
+        orderitem = Orderitem.objects.filter(id=orderitem_id).first()
 
-        orderitem_id= Orderitem.objects.filter(id=orderitem_id).first()
+        if not orderitem:
+            return Response({"error": "Order not found"}, status=404)
 
-        if orderitem_id:
-            orderitem_id.is_paid = True
-            orderitem_id.save()
-            return redirect("https://glamify-frontend-site.netlify.app/order_details.html")
-        
-        return Response({"error": "Order not found"}, status=404)
+        user = orderitem.user
 
+        # 1️⃣ কার্ট থেকে সব আইটেম নিয়ে Orderitem এ কপি করা
+        cart_items = Cart.objects.filter(user=user)
+        if not cart_items.exists():
+            return Response({"error": "Cart is empty"}, status=400)
+
+        for cart in cart_items:
+            Orderitem.objects.create(
+                user=user,
+                checkout=orderitem.checkout,
+                product_name=cart.product,
+                quantity=cart.quantity,
+                status="pending",
+                created_at=timezone.now(),
+                is_paid=True  # ✅ পেমেন্ট সফল ধরে নিচ্ছি
+            )
+
+        # 2️⃣ কার্ট ক্লিয়ার করা
+        cart_items.delete()
+
+        # 3️⃣ প্রথম যেই orderitem এসেছিলো, সেটা paid করে দাও
+        orderitem.is_paid = True
+        orderitem.save()
+
+        # 4️⃣ রিডাইরেক্ট করো
+        return redirect("https://glamify-frontend-site.netlify.app/order_details.html")
 
 
 class PaymentFailedAPI(APIView):
