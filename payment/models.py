@@ -20,7 +20,7 @@ class Checkout(models.Model):
 
 class Orderitem(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True, null=True)
-    checkout = models.ForeignKey(Checkout, on_delete=models.CASCADE, related_name='items', blank=True, null=True)
+    checkout_id = models.ForeignKey(Checkout, on_delete=models.CASCADE)
     product_name = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)
     quantity = models.PositiveIntegerField(default=1) 
     status = models.CharField(max_length=20, choices=[
