@@ -130,7 +130,7 @@ class PaymentSuccessAPI(APIView):
             )
 
         # 2️⃣ কার্ট ক্লিয়ার করা
-        cart_items.delete()
+        # cart_items.delete()
 
         # 3️⃣ প্রথম যেই orderitem এসেছিলো, সেটা paid করে দাও
         orderitem.is_paid = True
