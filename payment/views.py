@@ -124,9 +124,9 @@ class PaymentSuccessAPI(APIView):
                 checkout=orderitem.checkout,
                 product_name=cart.product,
                 quantity=cart.quantity,
-                status="pending",
+                status="Scucess",
                 created_at=timezone.now(),
-                is_paid=True  # ✅ পেমেন্ট সফল ধরে নিচ্ছি
+                is_paid=False
             )
 
         # 2️⃣ কার্ট ক্লিয়ার করা
