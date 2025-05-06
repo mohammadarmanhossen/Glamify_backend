@@ -1,3 +1,7 @@
+
+
+
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
@@ -10,6 +14,8 @@ from django.shortcuts import redirect
 
 from .serializers import CheckoutSerializer, OrderitemSerializer
 from .models import Checkout, Orderitem
+from product.models import Cart
+
 
 
 class CheckoutViewSet(viewsets.ModelViewSet):
@@ -82,22 +88,44 @@ class PaymentViewSet(viewsets.ViewSet):
         except Exception as e:
             return Response({"error": "Payment processing failed", "details": str(e)}, status=500)
 
+from rest_framework.response import Response
 
-    
+# Payment Success Handler
 class PaymentSuccessAPI(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, orderitem_id):  
+        orderitem = Orderitem.objects.filter(id=orderitem_id).first()
 
-        orderitem_id= Orderitem.objects.filter(id=orderitem_id).first()
+        if orderitem:
+            orderitem.is_paid = True
+            orderitem.save()
 
-        if orderitem_id:
-            orderitem_id.is_paid = True
-            orderitem_id.save()
-            return redirect("https://glamify-frontend-site.netlify.app/order_details.html")
-        
-        return Response({"error": "Order not found"}, status=404)
+            # Cart Items কপি করা
+            cart_items = Cart.objects.filter(user=request.user)
 
+            if not cart_items.exists():
+                return Response({'error': 'Cart is empty'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # ✅ কার্ট আইটেম গুলো Orderitem এ কপি করুন
+            for item in cart_items:
+                Orderitem.objects.create(
+                    user=request.user,
+                    checkout=orderitem.checkout,
+                    product_name=item.product,
+                    quantity=item.quantity,
+                    status='pending',
+                    created_at=timezone.now(),
+                    is_paid=False
+                )
+
+            # ✅ কার্ট ক্লিয়ার করুন
+            cart_items.delete()
+
+            # Return success response with order details
+            return Response({"message": "Payment successful, order placed.", "checkout_id": orderitem.checkout.id}, status=status.HTTP_200_OK)
+
+        return Response({"error": "Order not found"}, status=status.HTTP_404_NOT_FOUND)
 
 
 class PaymentFailedAPI(APIView):
